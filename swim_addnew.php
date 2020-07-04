@@ -36,13 +36,22 @@ if (empty($_GET['swim_id']) == false)
 <head>
     <meta charset = "UTF-8">
     <title> Enter details of the new partipant </title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.0/milligram.css">
-
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 </head>
 <body>
    <h1> Add New Swimmer </h1>
+   <?php
+   session_start();
+
+   // check if there is a user identity stored in the session object
+   if (empty($_SESSION['user_id'])) {
+   // if there is no user_id in the session, redirect the user to the login page
+   header('location:login.php');
+   exit();
+   }
+
+   ?>
     <form method = "post" action = "save_swim.php">
       <table>
         <tr>
@@ -114,5 +123,6 @@ if (empty($_GET['swim_id']) == false)
        
     </form>
     <a href="swim.php">Back to records </a>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

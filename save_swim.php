@@ -3,17 +3,20 @@
 <head>
     <meta charset = "UTF-8">
     <title> saved </title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.0/milligram.css">
-
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 </head>
 <body>
     <?php
+    session_start();
+
+    // check if there is a user identity stored in the session object
+    if (empty($_SESSION['user_id'])) {
+    // if there is no user_id in the session, redirect the user to the login page
+    header('location:login.php');
+    exit();
+    }
+    
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $position_number = $_POST['position_number'];
@@ -73,5 +76,6 @@
   
     </br>
     <a href ="swim.php">Click to view players list</a>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

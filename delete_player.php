@@ -1,7 +1,14 @@
 <?php ob_start(); ?>
     
 <?php
+session_start();
 
+// check if there is a user identity stored in the session object
+if (empty($_SESSION['user_id'])) {
+// if there is no user_id in the session, redirect the user to the login page
+header('location:login.php');
+exit();
+}
 // capture the selected swim_id from the url and store it in a variable with the same name
 $swim_id = $_GET['swim_id'];
 
