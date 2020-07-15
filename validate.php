@@ -1,17 +1,11 @@
 <?php ob_start(); ?>
-
-<!DOCTYPE html>
-<html>
-
-<body>
-
 <?php
 // store the inputs & hash the password
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 // connect
-$conn = new PDO('mysql:host=172.31.22.43;dbname=Priya200447419', 'Priya200447419', 'EcuOYoEEiR');
+require('db.php');
 
 // write the query
 $sql = "SELECT * FROM users WHERE username = :username";
@@ -45,4 +39,3 @@ $conn = null;
 </body>
 </html>
 <?php ob_flush(); ?>
-

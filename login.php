@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-   
-    <title>Login</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-</head>
-<body>
-    <h1> Login Form    </h1>
     <?php
+
+        //header
+        require_once('header.php');
 
         // access the current session
 
@@ -35,11 +27,8 @@
         <button class="btn btn-success col-sm-offset-2">Login</button>
 
         </form>
-   
+   <?php require_once('footer.php');
 
 
     
 
-<script src="js/bootstrap.min.js"></script>
-</body>
-</html>

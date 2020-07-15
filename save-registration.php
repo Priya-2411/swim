@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    
-    <title>Saving your registration</title>
-    
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-</head>
-<body>
     <?php
+require_once('header.php');
     //get the form inputs
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -17,7 +7,7 @@
     $ok = true;
     
     // connecting to the database
-    $conn = new PDO('mysql:host=172.31.22.43;dbname=Priya200447419', 'Priya200447419', 'EcuOYoEEiR');
+    require('db.php');
 
     // checking if the username already exists
 
@@ -69,8 +59,5 @@
 
     }
 
-
+require_once('footer.php');
     ?>
-    <script src="js/bootstrap.min.js"></script>
-</body>
-</html>

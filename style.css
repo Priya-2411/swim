@@ -1,6 +1,8 @@
 :root {
     --width-of-browser: 100vw;
-    --marginleft: -5vw;
+
+    /* If the width doesn't look quite right, adjust below value*/
+    --marginleft:-29vw;
 }
 
 nav {
@@ -14,10 +16,35 @@ ul {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    font-size: 17px;
+    font-size: 20px;
+    font-family: arial, sans-serif;
 }
 
-nav ul a { color: #000 }
+nav ul a { 
+    color: #000;
+    text-decoration: none !important;
+}
+
+nav ul a {
+    position: relative;
+    width: 100%;
+    color: #004b87;
+  }
+
+nav ul a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    border-bottom: 3px solid #64a70b;
+    transition: 0.4s;
+}
+
+nav ul a:hover:after {
+    width: 100%;
+}
+
 
 html, body { height: 100%; }
 

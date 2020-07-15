@@ -1,19 +1,15 @@
-<?php ob_start(); ?>
-    
-<?php
-session_start();
+<?php ob_start();
+// authentication check
+require_once('auth.php');
+//insert header
+require_once('header.php');
 
-// check if there is a user identity stored in the session object
-if (empty($_SESSION['user_id'])) {
-// if there is no user_id in the session, redirect the user to the login page
-header('location:login.php');
-exit();
-}
+
 // capture the selected swim_id from the url and store it in a variable with the same name
 $swim_id = $_GET['swim_id'];
 
 // connect
-$conn = new PDO('mysql:host=172.31.22.43;dbname=Priya200447419', 'Priya200447419', 'EcuOYoEEiR');
+require('db.php');
 
 // set up the SQL command
 $sql = "DELETE FROM swim WHERE swim_id = :swim_id";
@@ -31,4 +27,3 @@ header('location:swim.php');
 ?>
 
 <?php ob_flush(); ?>
-

@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang = "en">
-<head>
-    <meta charset = "UTF-8">
-    <title> saved </title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-</head>
-<body>
-    <?php
-    session_start();
+<?php
 
-    // check if there is a user identity stored in the session object
-    if (empty($_SESSION['user_id'])) {
-    // if there is no user_id in the session, redirect the user to the login page
-    header('location:login.php');
-    exit();
-    }
+    // authentication check
+    require_once('auth.php');
+    //insert header
+    require_once('header.php');
     
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
@@ -43,7 +31,7 @@
   
    if($ok == true){
 
-            $conn = new PDO('mysql:host=172.31.22.43;dbname=Priya200447419', 'Priya200447419', 'EcuOYoEEiR');
+    require('db.php');
 
         if(empty($swim_id)){
             $sql = "INSERT INTO swim (firstName,lastName,position_number,age)  VALUES (:firstName,:lastName,:position_number,:age)";
@@ -76,6 +64,4 @@
   
     </br>
     <a href ="swim.php">Click to view players list</a>
-    <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+<?php require_once('footer.php');
