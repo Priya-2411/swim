@@ -7,6 +7,7 @@
     <link rel= "stylesheet" href = "css/bootstrap.min.css"/>
     <link rel = "stylesheet" href = "css/bootstrap-theme.min.css"/>
    
+   
     
 </head>
 <body>
@@ -20,7 +21,7 @@
             
             <li> <a href = "swim_addnew.php" title="Add new"> Add new </a> </li>
             <li> <a href = "swim.php" title="Swim"> Swim-Team </a> </li>
-            <li> <a href = "logout.php" title="Logout"> Logout </a> </li>
+            <li> <a href = "logout.php" title="Logout" class ="nav-link"> Logout </a> </li>
             
             <?php
              }

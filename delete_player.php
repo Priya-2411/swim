@@ -12,18 +12,28 @@ $swim_id = $_GET['swim_id'];
 require('db.php');
 
 // set up the SQL command
-$sql = "DELETE FROM swim WHERE swim_id = :swim_id";
-
-// create a command object so we can populate the swim_id value, the run the deletion
-$cmd = $conn->prepare($sql);
-$cmd->bindParam(':swim_id', $swim_id, PDO::PARAM_INT);
-$cmd->execute();
+try
+{
 
 
+        $sql = "DELETE FROM swim WHERE swim_id = :swim_id";
+
+        // create a command object so we can populate the swim_id value, the run the deletion
+        $cmd = $conn->prepare($sql);
+        $cmd->bindParam(':swim_id', $swim_id, PDO::PARAM_INT);
+        $cmd->execute();
 
 
 
-header('location:swim.php');
+
+
+        header('location:swim.php');
+        $conn = null;
+}
+catch(Exception $e){
+    header('location:error.php');
+}
+
 ?>
 
 <?php ob_flush(); ?>

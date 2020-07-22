@@ -7,6 +7,7 @@ $password = $_POST['password'];
 // connect
 require('db.php');
 
+try{
 // write the query
 $sql = "SELECT * FROM users WHERE username = :username";
 
@@ -34,6 +35,11 @@ else {
 
 
 $conn = null;
+}
+catch (Exception $e)
+{
+    header('location:error.php');
+}
 ?>
 
 </body>

@@ -32,6 +32,8 @@
    if($ok == true){
 
     require('db.php');
+    try
+    {
 
         if(empty($swim_id)){
             $sql = "INSERT INTO swim (firstName,lastName,position_number,age)  VALUES (:firstName,:lastName,:position_number,:age)";
@@ -55,9 +57,12 @@
             echo "NEW TEAM MEMBER ADDED";
 
             header('location:swim.php');
+        
 
-
-   }
+    }
+    catch(Exception $e){
+        header('location:error.php');
+    }
     
     ?>
     </br>

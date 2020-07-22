@@ -59,6 +59,8 @@ if (empty($_GET['swim_id']) == false)
                      <option >--Select--</option>
                   
                      <?php
+                     try
+                     {
                         $sql = "SELECT * FROM age_group ORDER BY age";
                         require('db.php');
                         $cmd = $conn->prepare($sql);
@@ -75,6 +77,11 @@ if (empty($_GET['swim_id']) == false)
                            
                         }
                         $conn= null;
+                     }
+                     catch (Exception $e)
+                     {
+                        header('location:error.php');
+                     }
                      ?>
                    </select>
                </fieldset>

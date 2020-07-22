@@ -2,7 +2,7 @@
     
         //require_once('auth.php');
         //insert header
-        
+        session_start();
         require_once('header.php');
         
        ?>
