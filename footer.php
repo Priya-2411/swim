@@ -1,5 +1,5 @@
 
-<footer class="navbar-fixed-bottom">
+<footer class="alert alert-warning ">
 <div class="container">
 <div class="col-sm-8">
             © 2020 | COMP1006 Intro to Web Programming | Priya Patel

@@ -18,7 +18,7 @@
          <!-- show private or public links depending on if the user has logged in or not -->
             <?php 
             if (!empty($_SESSION['user_id'])){ ?>
-            
+            <li> <a href = "gallery.php" title="Gallery"> Gallery</a> </li>
             <li> <a href = "swim_addnew.php" title="Add new"> Add new </a> </li>
             <li> <a href = "swim.php" title="Swim"> Swim-Team </a> </li>
             <li> <a href = "logout.php" title="Logout" class ="nav-link"> Logout </a> </li>

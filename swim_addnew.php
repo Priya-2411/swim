@@ -11,6 +11,8 @@ $lastName = null;
 $position_number = null;
 $age = null;
 $swim_id = null;
+$photo = null;
+
 
 if (empty($_GET['swim_id']) == false) 
    $swim_id = $_GET['swim_id'];
@@ -32,12 +34,13 @@ if (empty($_GET['swim_id']) == false)
     $lastName = $swim['lastName'];
     $position_number = $swim['position_number'];
     $age = $swim['age'];
+    $photo = $swim['photo'];
    
    
   
 
 ?>
-<form method = "post" action = "save_swim.php">
+<form method = "post" action = "save_swim.php" enctype="multipart/form-data">
 
          <form method = "post" action = "save-registration.php">
                <fieldset class ="form-group">
@@ -85,6 +88,15 @@ if (empty($_GET['swim_id']) == false)
                      ?>
                    </select>
                </fieldset>
+               <fieldset class="form-group">
+                <label for="photo" class="col-sm-2">pool image:</label>
+                <input name="photo" id="photo" type = "file"/>
+            </fieldset>
+            <?php if(!empty($photo)){ ?>
+                <div class="col-sm-offset-2">
+                    <img src="uploads/<?php echo $photo; ?>" alt ="swimming pool" height="297px" width="200px">
+                </div>
+            <?php } ?>
                <button class = "btn btn-success col-sm-offset-2">Register</button>
                <input name="swim_id" type="hidden" value="<?php echo $swim_id; ?>"/>
             </form>
