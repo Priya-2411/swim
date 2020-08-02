@@ -38,7 +38,7 @@ require_once('header.php');
                 echo "passwords do not match";
                 $ok = false;
             }
-           /* // recaptcha validation
+           // recaptcha validation
             $apiUrl = "https://www.google.com/recaptcha/api/siteverify"; // from api docs
             $secrete = "6Lf1RLIZAAAAAMA3gHIohHn8UYRgCNh6CG9E7zN3"; // from api console settings
             $response = $_POST['recaptchaResponse']; // from the hidden input fields on the register form
@@ -54,7 +54,7 @@ require_once('header.php');
             if($recaptchaResponse->score < 0.5){
                 echo "Are you human ?";
                 $ok = false;
-            } */
+            } 
 
 
 

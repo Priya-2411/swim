@@ -93,8 +93,8 @@ if (empty($_GET['swim_id']) == false)
                 <input name="photo" id="photo" type = "file"/>
             </fieldset>
             <?php if(!empty($photo)){ ?>
-                <div class="col-sm-offset-2">
-                    <img src="uploads/<?php echo $photo; ?>" alt ="swimming pool" height="297px" width="200px">
+                <div class="col-sm-offset-2" >
+                    <img src="uploads/<?php echo $photo; ?>" alt ="swimming pool" height="297px" width="200px" >
                 </div>
             <?php } ?>
                <button class = "btn btn-success col-sm-offset-2">Register</button>
